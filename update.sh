@@ -165,8 +165,7 @@ install_small8() {
         lucky luci-app-lucky luci-app-openclash luci-app-homeproxy luci-app-amlogic nikki luci-app-nikki \
         tailscale luci-app-tailscale oaf open-app-filter luci-app-oaf easytier luci-app-easytier \
         msd_lite luci-app-msd_lite cups luci-app-cupsd \
-        luci-app-argon-config \  # Argon 主题配置插件
-        watchcat luci-app-watchcat # watchcat 核心+LuCI 界面
+        luci-app-argon-config 
 }
 
 install_fullconenat() {
