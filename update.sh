@@ -464,10 +464,14 @@ update_nss_pbuf_performance() {
     fi
 }
 
+
 set_build_signature() {
     local file="$BUILD_DIR/feeds/luci/modules/luci-mod-status/htdocs/luci-static/resources/view/status/include/10_system.js"
-    if [ -d "$(dirname "$file")" ] && [ -f $file ]; then
-        sed -i "s/(\(luciversion || ''\))/(\1) + (' \/ build by bg20255')/g" "$file"
+    # 获取当前时间，格式为：年-月-日 时:分:秒
+    local build_time=$(date +"%Y-%m-%d %H:%M:%S")
+    if [ -f "$file" ]; then
+        # 按指定格式拼接原始版本、时间、编译者信息
+        sed -i "s/(\(luciversion || ''\))/(\1) + (' \/ $build_time') + (' \/ build by bg20255')/g" "$file"
     fi
 }
 
