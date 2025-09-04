@@ -207,6 +207,8 @@ fix_default_set() {
             \cp -f "$BASE_PATH/patches/tempinfo" "$BUILD_DIR/package/emortal/autocore/files/tempinfo"
         fi
     fi
+     # 【新增：OAF 初始化脚本】自动启用并启动 appfilter 服务
+    install -Dm755 "$BASE_PATH/patches/993_enable_oaf.sh" "$BUILD_DIR/package/base-files/files/etc/uci-defaults/993_enable_oaf.sh"
 }
 
 fix_miniupnpd() {
